@@ -47,6 +47,11 @@ class Router:
 			controller = ResourceController(self.args)
 			controller.render()
 
+		elif self.args.restart_daemons:
+			from tracer.controllers.restart import RestartController
+			controller = RestartController(self.args)
+			controller.render()
+
 		else:
 			from tracer.controllers.default import DefaultController
 			controller = DefaultController(self.args, self.packages)

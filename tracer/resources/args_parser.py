@@ -119,6 +119,12 @@ parser.add_argument('--show-resource',
 	help='provide informations about selected resource'
 )
 
+parser.add_argument('--restart-daemons', '--restart-services',
+	dest='restart_daemons',
+	action='store_true',
+	help='restart daemons/services that are updated and restartable'
+)
+
 user = parser.add_mutually_exclusive_group()
 user.add_argument("-u", "--user",
 	nargs=1,
